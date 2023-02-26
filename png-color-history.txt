@@ -1,0 +1,54 @@
+PNG-Color
+Vít Èondák 2017-2022
+
+Usage: PNG-color bwimage colourimage outputimage [percentage of saturation] [WR]
+
+       R   resize colourimage to match the size of bwimage
+       W   wait for key
+
+       Replacing grayscaleimage with @ normalizes luminance (FF808080).
+
+Todo:
+* 2022-09-22
+  rùzné pomìry obrázkù jsou ponìkud nedoladìné, ale nechce se mi to teï zkoumat... =}
+  chce to doladit posun pointeru podle Y
+
+* 2022-09-22
+  pro normalizaci by mìla být k dispozici ještì kompenzace desaturace tmavých odstínù.
+  Ideálnì by mìlo být možné ji nastavit i pro normální kolorování (kladnou nebo zápornou).
+
+
+Historie
+
+0.59	2023-02-25
+	+ nový switch R masku pøed aplikací roztáhne na rozmìry èb obrázku
+
+0.58	2023-02-01
+	* velmi tmavé barvy marsky (lum < 10) se desaturují, 
+	  protože jejich hue a saturace jsou vìtšinou dost "zcestné"
+
+0.57	2022-09-22
+	* pøechod na .NET 4.8 a x64
+	+ parametr @ pro normalizaci masky
+	* prohozena podmínka pro krok v ose Y
+
+0.56	15:56 17.01.2020
+	* jako ètvrtý parametr je možné zadat percentuální hodnotu saturace (i nad 100)
+
+0.55	14:48 12.11.2019
+	+ soubor s barevnou mapou mùže být proti originálu napø. polovièní nebo ètvrtinový
+	  (ale musí je jednat o celoèíselný pomìr)
+
+0.54	14:09 12.11.2019
+	* revize pro .NET 4.7.3
+
+0.53	22:07 20.8.2018
+	asi podruhé opravena chyba, kdy se ve výstupním souboru nevyplòovala alfa
+
+0.51	2017-11-08
+	verze pøesunuta do assembly
+
+0.50	2017-11-07
+	první verze
+
+(eof)
