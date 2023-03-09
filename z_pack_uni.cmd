@@ -27,7 +27,7 @@ set SUF=%SUF%x
 goto SUF
 
 :READY
-"c:\Program Files\WinRAR\WinRAR.exe" a %FULLNAME% . %prefix% txt -m5 -s
+"c:\Program Files\WinRAR\WinRAR.exe" a %FULLNAME% . %prefix% -m5 -s
 
 copy %FULLNAME%.rar "%GD%\video\png-tools\%prefix%\"
 

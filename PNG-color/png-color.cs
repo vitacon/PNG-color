@@ -26,6 +26,8 @@ namespace PNG_color
             Console.WriteLine("PNG Colorizer v" + version.Major + "." + version.Minor + "\n");
 
             long msstart = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
+            long mslap = 0;
+            long mssave = 0;
 
             String filnam1 = "";
             String filnam2 = "";
@@ -166,6 +168,8 @@ namespace PNG_color
                     }
                 }
                 Console.WriteLine();
+
+                mslap = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
 
                 if (result == 0)
                 {
@@ -316,6 +320,9 @@ namespace PNG_color
                         bitmap2.UnlockBits(bData2);
                         bitmap1.UnlockBits(bData1);
                     }
+
+                    mssave = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
+
                     // uložím výsledek
                     bitmap3.Save(filout, System.Drawing.Imaging.ImageFormat.Png);
 
@@ -328,7 +335,12 @@ namespace PNG_color
             }
 
             long msend = DateTime.Now.Ticks / TimeSpan.TicksPerMillisecond;
-            Console.WriteLine("\n\nDuration:\t" + ((double)(msend - msstart)) / 1000 + " s");
+
+            //"The value is: '{0,5:#.###}'", value
+            Console.WriteLine("\n\nPreparation:\t{0,5:###} ms",  mslap - msstart);
+            Console.WriteLine("Calculation:\t{0,5:###} ms", mssave - mslap);
+            Console.WriteLine("Saving:\t\t{0,5:###} ms", msend - mssave);
+            Console.WriteLine("Total duration:\t{0,5:###} ms", msend - msstart);
 
             Console.WriteLine("\nDone.");
             if (b_wait) Console.ReadKey();

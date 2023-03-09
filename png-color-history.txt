@@ -1,5 +1,5 @@
 PNG-Color
-Vít Èondák 2017-2022
+Vít Èondák 2017-2023
 
 Usage: PNG-color bwimage colourimage outputimage [percentage of saturation] [WR]
 
@@ -20,11 +20,14 @@ Todo:
 
 Historie
 
+0.60	2023-03-09
+	* detailnìjší výpis èasù
+
 0.59	2023-02-25
 	+ nový switch R masku pøed aplikací roztáhne na rozmìry èb obrázku
 
 0.58	2023-02-01
-	* velmi tmavé barvy marsky (lum < 10) se desaturují, 
+	* velmi tmavé barvy masky (lum < 10) se desaturují, 
 	  protože jejich hue a saturace jsou vìtšinou dost "zcestné"
 
 0.57	2022-09-22
