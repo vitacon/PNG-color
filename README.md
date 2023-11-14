@@ -1,5 +1,5 @@
 # PNG-color
-A simple colorizing console tool for blending grayscale .png image and a ,png color map
+A simple colorizing console tool for blending grayscale .png image and a .png color map
 Windows + .NET
 
 Usage: 
